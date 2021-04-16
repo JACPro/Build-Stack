@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            MovingCube.CurrentCube.Stop();
+        }
     }
 }
