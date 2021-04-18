@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static event Action OnCubeSpawned = delegate { };
+
     private CubeSpawner[] spawners;
     private int spawnerIndex;
     private CubeSpawner currentSpawner;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
             currentSpawner = spawners[spawnerIndex];
 
             currentSpawner.SpawnCube();
+            OnCubeSpawned();
         }
     }
 }

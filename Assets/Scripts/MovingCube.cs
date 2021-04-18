@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MovingCube : MonoBehaviour
@@ -26,7 +23,7 @@ public class MovingCube : MonoBehaviour
 
     int prevColour;
 
-    private void OnEnable()
+    private void Start()
     {
         if (PrevCube == null)
         {
