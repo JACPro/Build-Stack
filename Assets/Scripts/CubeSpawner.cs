@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeSpawner : MonoBehaviour
+public partial class CubeSpawner : MonoBehaviour
 {
     [SerializeField] private MovingCube cubePrefab;
-
+    [SerializeField] private MoveDirection moveDirection;
+    
     public void SpawnCube()
     {
         var cube = Instantiate(cubePrefab);
@@ -22,6 +23,8 @@ public class CubeSpawner : MonoBehaviour
         {
             cube.transform.position = transform.position;
         }
+
+        cube.MoveDirection = moveDirection;
     }
 
     private void OnDrawGizmos() {
