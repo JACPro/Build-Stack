@@ -23,7 +23,7 @@ public class MovingCube : MonoBehaviour
 
     int prevColour;
 
-    private void Start()
+    private void OnEnable()
     {
         if (PrevCube == null)
         {
