@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     private int spawnerIndex;
     private CubeSpawner currentSpawner;
 
-    AudioSource audio;
+    AudioSource tickSFX;
 
     private void Start() 
     {
-        audio = GetComponent<AudioSource>();
+        tickSFX = GetComponent<AudioSource>();
         spawners = FindObjectsOfType<CubeSpawner>();
     }
 
@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
             OnCubeSpawned();
 
             //Randomise pitch of block placement tick each time
-            audio.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
-            audio.Play();
+            tickSFX.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+            tickSFX.Play();
         }
     }
 }
